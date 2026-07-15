@@ -1,0 +1,284 @@
+{
+  "version": 1,
+  "locale": "en_US",
+  "platform": "4.5.1",
+  "metadata": {
+    "appmode": "quarto-static",
+    "primary_rmd": "index.qmd",
+    "primary_html": null,
+    "content_category": null,
+    "has_parameters": false
+  },
+  "quarto": {
+    "version": "1.9.38",
+    "engines": ["markdown", "jupyter"]
+  },
+  "packages": null,
+  "files": {
+    "_book/chapters/citation.html": {
+      "checksum": "d4de793c6b6c22fb73b9dec89d0e98ec"
+    },
+    "_book/chapters/city_any_dataset.html": {
+      "checksum": "16e7bb42bce1841024a6ccfb6404df14"
+    },
+    "_book/chapters/city_list_dataset.html": {
+      "checksum": "b84341f64381d5458d0b5c808bc6fb5e"
+    },
+    "_book/chapters/city_pull_dataset.html": {
+      "checksum": "d40e15f0fee7f68ae529e7cd5deb3f0e"
+    },
+    "_book/chapters/finalizing-your-package.html": {
+      "checksum": "c14fdd54f34d0bb5cacdf995e164ba4d"
+    },
+    "_book/chapters/getting-started.html": {
+      "checksum": "bb4d4c2bb3cbd9e45033423e878f231c"
+    },
+    "_book/chapters/packages.html": {
+      "checksum": "a047474fbce8a16c9bbab9bd9c8466e1"
+    },
+    "_book/chapters/template-city-any-dataset.html": {
+      "checksum": "b7a9cc0c0d36e1a4afe9cc0f1452ad51"
+    },
+    "_book/chapters/template-city-list-dataset.html": {
+      "checksum": "a997c8489d3e2d357390bee632df21ad"
+    },
+    "_book/chapters/template-city-pull-dataset.html": {
+      "checksum": "a74e60573b9a4dfe06bd364fdc344a7d"
+    },
+    "_book/chapters/template-description.html": {
+      "checksum": "9d80e6e1e654889953f4511c99ae2258"
+    },
+    "_book/chapters/template-readme.html": {
+      "checksum": "71900d80e6f739fc49204d324d380570"
+    },
+    "_book/chapters/template-utils-requests.html": {
+      "checksum": "dc3eccb546cd3354ba4a8f4cc4b801ee"
+    },
+    "_book/chapters/template-vignette.html": {
+      "checksum": "2a468e4b4126ddf3973600ae2dfb1f3e"
+    },
+    "_book/chapters/utils_request.html": {
+      "checksum": "429ceae954003f43045909ed70dc01c1"
+    },
+    "_book/city_any_dataset.html": {
+      "checksum": "4810b4f1593aadf0ab8a150a1fb17390"
+    },
+    "_book/city_list_dataset.html": {
+      "checksum": "38cfa1c9091a4c74b2a4576255d90bc8"
+    },
+    "_book/city_pull_dataset.html": {
+      "checksum": "03b462826eed60b5de81a62bdcfcac61"
+    },
+    "_book/index.html": {
+      "checksum": "00bf2fa9d58865e9115e0e51ca83dda1"
+    },
+    "_book/intro.html": {
+      "checksum": "0c0d6c6c1c95e3bafc0d31c03f5124ae"
+    },
+    "_book/packages.html": {
+      "checksum": "4f7a00e32d690337b6136d38162886d9"
+    },
+    "_book/references.html": {
+      "checksum": "5a16974e9fbb113159b1565aeac1fe2b"
+    },
+    "_book/search.json": {
+      "checksum": "9e58a49ef11ef83fbaf9b03ba4b133be"
+    },
+    "_book/site_libs/bootstrap/bootstrap-367522ac618891c39d4b2ae87ea7600e.min.css": {
+      "checksum": "367522ac618891c39d4b2ae87ea7600e"
+    },
+    "_book/site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css": {
+      "checksum": "5ccb035bea26c1e21f80f44cf7c27909"
+    },
+    "_book/site_libs/bootstrap/bootstrap-icons.css": {
+      "checksum": "886da841d7421705f715f600c5ff11bb"
+    },
+    "_book/site_libs/bootstrap/bootstrap-icons.woff": {
+      "checksum": "efe54401ef52214fd3b701e23ff88c5f"
+    },
+    "_book/site_libs/bootstrap/bootstrap.min.js": {
+      "checksum": "e2b09c06f0e714b6144a6788a28e3950"
+    },
+    "_book/site_libs/clipboard/clipboard.min.js": {
+      "checksum": "15f52a1ee547f2bdd46e56747332ca2d"
+    },
+    "_book/site_libs/quarto-diagram/mermaid-init.js": {
+      "checksum": "35cf34474c6b3cb3e659633a985a71cd"
+    },
+    "_book/site_libs/quarto-diagram/mermaid.css": {
+      "checksum": "0aeecd8a816e25e43a41943c6146c2b7"
+    },
+    "_book/site_libs/quarto-diagram/mermaid.min.js": {
+      "checksum": "b083b6bcb3a68ca7b61312fef800366f"
+    },
+    "_book/site_libs/quarto-html/anchor.min.js": {
+      "checksum": "91bcf6cd1fd88fec3f109811e5fc3546"
+    },
+    "_book/site_libs/quarto-html/popper.min.js": {
+      "checksum": "3a4a291ccf3f1ea0f82b641542fd3827"
+    },
+    "_book/site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css": {
+      "checksum": "15634bcf2e68342d4ad2dfa704d543f6"
+    },
+    "_book/site_libs/quarto-html/quarto.js": {
+      "checksum": "6f4245742deb3cc92337dbe2701ccfe1"
+    },
+    "_book/site_libs/quarto-html/tabsets/tabsets.js": {
+      "checksum": "e8d6a8862b33ccc461f8fd532e05b365"
+    },
+    "_book/site_libs/quarto-html/tippy.css": {
+      "checksum": "ebd6f8ce46a677e1a4f5f8a8317109a9"
+    },
+    "_book/site_libs/quarto-html/tippy.umd.min.js": {
+      "checksum": "d828775275749701b48bd9d958814111"
+    },
+    "_book/site_libs/quarto-nav/headroom.min.js": {
+      "checksum": "ace0360e576db9b6e7df48ac68ddbbf4"
+    },
+    "_book/site_libs/quarto-nav/quarto-nav.js": {
+      "checksum": "12d334846b27bdb493298c08277bdf7f"
+    },
+    "_book/site_libs/quarto-search/autocomplete.umd.js": {
+      "checksum": "b514204f2ef1ca7a8e2ad4579d263504"
+    },
+    "_book/site_libs/quarto-search/fuse.min.js": {
+      "checksum": "de7d60e4a6881074275feca14b84a49d"
+    },
+    "_book/site_libs/quarto-search/quarto-search.js": {
+      "checksum": "9c992af743ca88c8c5f650cf312c4e61"
+    },
+    "_book/summary.html": {
+      "checksum": "11d2768e81cc5bfee30a83f3c3396293"
+    },
+    "_book/utils_request.html": {
+      "checksum": "14568a6bce39b46cbaf7cb14e43a7ec1"
+    },
+    "_quarto.yml": {
+      "checksum": "a83805027538c61a39ddbc8e310e68cf"
+    },
+    ".RData": {
+      "checksum": "8444642da60686f380b1de0a792d628f"
+    },
+    "chapters/citation.qmd": {
+      "checksum": "b3b7842105171f4aa6bde69d9e2fee15"
+    },
+    "chapters/city_any_dataset.qmd": {
+      "checksum": "7bcf0e18af1eaa1d04353ab0d1eadc0f"
+    },
+    "chapters/city_list_dataset.qmd": {
+      "checksum": "7e76df30b4e47e29d8f1af7873e5f3df"
+    },
+    "chapters/city_list_dataset.quarto_ipynb": {
+      "checksum": "26685c4600617bead248fa7c3bc3f422"
+    },
+    "chapters/city_pull_dataset.qmd": {
+      "checksum": "1695f0bbe04681b7deb1613e7dcef29b"
+    },
+    "chapters/finalizing-your-package.qmd": {
+      "checksum": "61184e21bb84179eff00b37f0b64d07f"
+    },
+    "chapters/getting-started.qmd": {
+      "checksum": "075f13695ed6d6fdf12e35fed56825de"
+    },
+    "chapters/getting-started.quarto_ipynb": {
+      "checksum": "24dea80a48f90d5733327ab8bf40156a"
+    },
+    "chapters/packages.qmd": {
+      "checksum": "a8572d111b6935a3d656e9489f4d6d7b"
+    },
+    "chapters/template-city-any-dataset.qmd": {
+      "checksum": "1f1d4d0e5dda2ae3e78bfb1030f91b79"
+    },
+    "chapters/template-city-any-dataset.quarto_ipynb": {
+      "checksum": "d3d34d990cdfd00af0ddc4356d26b61a"
+    },
+    "chapters/template-city-list-dataset.qmd": {
+      "checksum": "08215513663df09f7fd631d54c0e8e99"
+    },
+    "chapters/template-city-list-dataset.quarto_ipynb": {
+      "checksum": "6d10c5f707dede459dd2698f0ce39925"
+    },
+    "chapters/template-city-pull-dataset.qmd": {
+      "checksum": "98c280e5f08f69617d67f2df807d5cd6"
+    },
+    "chapters/template-city-pull-dataset.quarto_ipynb": {
+      "checksum": "1d86af1dbc56a3209034d3f7fc50faee"
+    },
+    "chapters/template-description.qmd": {
+      "checksum": "4cd01e0495387b794b571d766f08a895"
+    },
+    "chapters/template-description.quarto_ipynb": {
+      "checksum": "bfb3a5c6bcc0c18e1754ea053c87f872"
+    },
+    "chapters/template-readme.qmd": {
+      "checksum": "b2a43a2848416e650289053b6921aede"
+    },
+    "chapters/template-readme.quarto_ipynb": {
+      "checksum": "0545db9c4405865a0f57b82a059dbd74"
+    },
+    "chapters/template-utils-requests.qmd": {
+      "checksum": "b20a99b6f2b8b3556593bb3f70922681"
+    },
+    "chapters/template-utils-requests.quarto_ipynb": {
+      "checksum": "0f42d9156c633d1dddf7509baf169f6c"
+    },
+    "chapters/template-vignette.qmd": {
+      "checksum": "91c083b0fa2ba319e9eba3951d57e734"
+    },
+    "chapters/template-vignette.quarto_ipynb": {
+      "checksum": "4678677084b784ce22272aef42050fc7"
+    },
+    "chapters/utils_request.qmd": {
+      "checksum": "9d33520e682ba12af4887a679aa03409"
+    },
+    "images/Screenshot 2026-07-15 at 16.49.50.png": {
+      "checksum": "27aef6a0c9e5e679b169e6f4a7232356"
+    },
+    "index.qmd": {
+      "checksum": "bed0f8fce8db2f9ffe6ef65433f35ce1"
+    },
+    "packages_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css": {
+      "checksum": "138a6193a3bd40baf1e627da441a4734"
+    },
+    "packages_files/libs/bootstrap/bootstrap-icons.css": {
+      "checksum": "886da841d7421705f715f600c5ff11bb"
+    },
+    "packages_files/libs/bootstrap/bootstrap-icons.woff": {
+      "checksum": "efe54401ef52214fd3b701e23ff88c5f"
+    },
+    "packages_files/libs/bootstrap/bootstrap.min.js": {
+      "checksum": "e2b09c06f0e714b6144a6788a28e3950"
+    },
+    "packages_files/libs/clipboard/clipboard.min.js": {
+      "checksum": "15f52a1ee547f2bdd46e56747332ca2d"
+    },
+    "packages_files/libs/quarto-html/anchor.min.js": {
+      "checksum": "91bcf6cd1fd88fec3f109811e5fc3546"
+    },
+    "packages_files/libs/quarto-html/popper.min.js": {
+      "checksum": "3a4a291ccf3f1ea0f82b641542fd3827"
+    },
+    "packages_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css": {
+      "checksum": "15634bcf2e68342d4ad2dfa704d543f6"
+    },
+    "packages_files/libs/quarto-html/quarto.js": {
+      "checksum": "6f4245742deb3cc92337dbe2701ccfe1"
+    },
+    "packages_files/libs/quarto-html/tabsets/tabsets.js": {
+      "checksum": "e8d6a8862b33ccc461f8fd532e05b365"
+    },
+    "packages_files/libs/quarto-html/tippy.css": {
+      "checksum": "ebd6f8ce46a677e1a4f5f8a8317109a9"
+    },
+    "packages_files/libs/quarto-html/tippy.umd.min.js": {
+      "checksum": "d828775275749701b48bd9d958814111"
+    },
+    "README.md": {
+      "checksum": "3adfffc6824851c9de8a289c00817dee"
+    },
+    "README.Rmd": {
+      "checksum": "da7f858e6a5f3a84f6d25bb87ba2db03"
+    }
+  },
+  "users": null
+}
