@@ -30,15 +30,13 @@ Since then, **nycOpenData** has undergone peer review and been accepted into t
 
 The OpenData ecosystem continues to grow. Currently, the following packages are available on CRAN:
 
-1.  `nycOpenData`
-
-2.  `nysOpenData`
-
-3.  `mtaOpenData`
-
-4.  `laOpenData`
-
-5.  `chiOpenData`
+| Package                      | Coverage                              |
+|------------------------------|---------------------------------------|
+| `nycOpenData` @R-nycOpenData | New York City                         |
+| `nysOpenData` @R-nysOpenData | New York State                        |
+| `mtaOpenData` @R-mtaOpenData | Metropolitan Transportation Authority |
+| `laOpenData` @R-laOpenData   | Los Angeles                           |
+| `chiOpenData` @R-chiOpenData | Chicago                               |
 
 Together, these packages provide convenient access to tens of billions of rows of publicly available data spanning transportation, public safety, health, education, housing, the environment, and many other domains.
 
@@ -91,3 +89,9 @@ For each script you will:
 5.  Complete a checklist before moving to the next chapter.
 
 Following this workflow ensures that every package built from the template follows the same architecture, quality standards, and user experience—making the OpenData ecosystem easier to maintain, expand, and use.
+
+## License
+
+Unless otherwise noted, the written content of this guide is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+
+Original code examples, scripts, and reusable package templates are licensed under the MIT License. See the repository's `LICENSE.md` file for complete licensing information.

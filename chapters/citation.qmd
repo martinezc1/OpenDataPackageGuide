@@ -43,3 +43,13 @@ Every package built using this framework contributes to a growing ecosystem of t
 Rather than maintaining dozens of unrelated implementations, this framework encourages consistency across packages while allowing each city to highlight its own data resources.
 
 If you develop a new package using this guide, consider letting the project know. We would love to include it in the growing list of OpenData packages.
+
+------------------------------------------------------------------------
+
+## Related Resources
+
+Additional resources related to this guide include:
+
+- **Reproducible Research Using R** @Martinez2026ReproducibleResearch — A companion textbook covering Quarto, reproducible workflows, and scientific communication.
+
+- **OpenData Packages** @R-nycOpenData; @R-nysOpenData; @R-mtaOpenData; @R-chiOpenData; @R-laOpenData — Reference implementations of the architecture presented throughout this guide.

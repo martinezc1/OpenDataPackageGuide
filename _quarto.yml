@@ -24,6 +24,10 @@ book:
     - chapters/template-readme.qmd
     - chapters/template-vignette.qmd
 
+bibliography: references.bib
+
+license: "CC BY 4.0"
+
 format:
   html:
     theme:
