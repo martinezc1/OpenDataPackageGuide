@@ -11,7 +11,7 @@
   },
   "quarto": {
     "version": "1.9.38",
-    "engines": ["markdown", "jupyter"]
+    "engines": ["markdown"]
   },
   "packages": null,
   "files": {
