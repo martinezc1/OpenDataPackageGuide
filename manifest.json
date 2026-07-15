@@ -4,16 +4,10 @@
   "platform": "4.5.1",
   "metadata": {
     "appmode": "quarto-static",
-    "primary_rmd": "_quarto.yml",
+    "primary_rmd": "index.qmd",
     "primary_html": null,
-    "content_category": null,
+    "content_category": "site",
     "has_parameters": false
-  },
-  "environment": {
-    "environment_management": {
-      "r": true,
-      "python": false
-    }
   },
   "quarto": {
     "version": "1.9.38",
@@ -160,7 +154,7 @@
       "checksum": "14568a6bce39b46cbaf7cb14e43a7ec1"
     },
     "_quarto.yml": {
-      "checksum": "a83805027538c61a39ddbc8e310e68cf"
+      "checksum": "f08e04a57fe52416903c7e4cbe8f6c21"
     },
     ".RData": {
       "checksum": "8444642da60686f380b1de0a792d628f"
