@@ -23,7 +23,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{text, include = FALSE}
+```text
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -32,7 +32,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{text setup}
+```text
 library(cityOpenData)
 library(dplyr)
 library(ggplot2)
@@ -54,7 +54,7 @@ The package provides three primary functions:
 
 The first step in a typical workflow is to use `city_list_datasets()` to retrieve the live CITY_NAME Open Data catalog.
 
-```{text list-datasets}
+```text
 catalog <- city_list_datasets()
 
 catalog
@@ -67,7 +67,7 @@ The returned catalog includes information about the datasets available through t
 
 You can search the catalog for datasets containing a keyword.
 
-```{text search-catalog}
+```text
 catalog |>
   filter(grepl("KEYWORD", name, ignore.case = TRUE)) |>
   select(key, uid, name)
@@ -83,7 +83,7 @@ A dataset can be requested using either its human-readable catalog key or its of
 
 ### Pulling by UID
 
-```{text pull-by-uid}
+```text
 example_data_uid <- city_pull_dataset(
   dataset = "abcd-1234",
   limit = 5
@@ -94,7 +94,7 @@ example_data_uid
 
 ### Pulling by Key
 
-```{text pull-by-key}
+```text
 example_data_key <- city_pull_dataset(
   dataset = "example_dataset_name",
   limit = 5
@@ -117,7 +117,7 @@ For reproducible research and long-term workflows, using the official Socrata UI
 
 The `filters` argument can be used for simple exact-match filtering.
 
-```{text filter-one-value}
+```text
 filtered_data <- city_pull_dataset(
   dataset = "abcd-1234",
   limit = 25,
@@ -131,14 +131,14 @@ filtered_data
 
 You can confirm that the filter worked by inspecting the unique values in the selected field.
 
-```{text verify-filter}
+```text
 filtered_data |>
   distinct(FILTER_FIELD)
 ```
 
 Multiple values can also be supplied.
 
-```{text filter-multiple-values}
+```text
 filtered_multiple <- city_pull_dataset(
   dataset = "abcd-1234",
   limit = 50,
@@ -152,7 +152,7 @@ filtered_multiple
 
 Multiple fields can be combined within the same filter list.
 
-```{text filter-multiple-fields}
+```text
 filtered_combination <- city_pull_dataset(
   dataset = "abcd-1234",
   limit = 50,
@@ -169,7 +169,7 @@ filtered_combination
 
 If the example dataset contains a date or datetime field, records can be filtered using `from`, `to`, and `date_field`.
 
-```{text date-filter}
+```text
 date_filtered_data <- city_pull_dataset(
   dataset = "abcd-1234",
   from = "2023-01-01",
@@ -185,7 +185,7 @@ The `from` date is inclusive, while the `to` date is exclusive.
 
 A single day can also be requested using the `date` argument.
 
-```{text single-date-filter}
+```text
 single_day_data <- city_pull_dataset(
   dataset = "abcd-1234",
   date = "2023-06-01",
@@ -216,7 +216,7 @@ https://SOCRATA_DOMAIN/resource/abcd-1234.json
 
 The endpoint can then be supplied directly to `city_any_dataset()`.
 
-```{text any-dataset}
+```text
 endpoint_data <- city_any_dataset(
   json_link = "https://SOCRATA_DOMAIN/resource/abcd-1234.json",
   limit = 5
@@ -239,7 +239,7 @@ Once the data have been downloaded, they can be analyzed using standard R tools.
 
 The following example counts the number of records in a categorical field.
 
-```{text summarize-example}
+```text
 category_summary <- city_pull_dataset(
   dataset = "abcd-1234",
   limit = 500
@@ -252,7 +252,7 @@ category_summary
 
 The results can then be visualized.
 
-```{text category-plot, fig.alt="Bar chart showing the most frequent categories in the example CITY_NAME Open Data dataset.", fig.cap="Most frequent categories in the example CITY_NAME Open Data dataset.", fig.height=5, fig.width=7}
+```text
 category_summary |>
   slice_head(n = 10) |>
   ggplot(
@@ -290,7 +290,7 @@ These functions allow users to focus on analysis rather than manually constructi
 
 If you use this package for research or educational purposes, cite it using the package citation returned by:
 
-```{text citation, eval=FALSE}
+```text
 citation("cityOpenData")
 ```
 ````

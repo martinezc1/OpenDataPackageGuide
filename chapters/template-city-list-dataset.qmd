@@ -1,6 +1,6 @@
 # Template: `city_list_dataset()`
 
-```{text}
+```text
 #' List available CITY_NAME Open Data datasets
 #'
 #' Retrieves a live catalog of CITY_NAME Open Data datasets from the CITY_NAME

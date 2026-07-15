@@ -129,7 +129,7 @@ remotes::install_github("YOUR_GITHUB_USERNAME/cityOpenData")
 
 ## Example
 
-```{text example, message=FALSE, warning=FALSE}
+```text
 library(cityOpenData)
 library(dplyr)
 
@@ -168,7 +168,7 @@ corresponding SoQL filtering conditions.
 
 Multiple values may be supplied for one field:
 
-```{text multiple-values, eval=FALSE}
+```text
 filtered_data <- city_pull_dataset(
   dataset = "abcd-1234",
   limit = 100,
@@ -180,7 +180,7 @@ filtered_data <- city_pull_dataset(
 
 Multiple fields may also be combined:
 
-```{text multiple-fields, eval=FALSE}
+```text
 filtered_data <- city_pull_dataset(
   dataset = "abcd-1234",
   limit = 100,
@@ -193,7 +193,7 @@ filtered_data <- city_pull_dataset(
 
 Date filtering is available for datasets containing date or datetime fields:
 
-```{text date-filter, eval=FALSE}
+```text
 date_filtered_data <- city_pull_dataset(
   dataset = "abcd-1234",
   from = "2023-01-01",
@@ -210,7 +210,7 @@ date_filtered_data <- city_pull_dataset(
 When a dataset is not available through `city_list_datasets()`, it can be
 downloaded directly using `city_any_dataset()`.
 
-```{text any-dataset, eval=FALSE}
+```text
 endpoint_data <- city_any_dataset(
   json_link = "https://SOCRATA_DOMAIN/resource/abcd-1234.json",
   limit = 100

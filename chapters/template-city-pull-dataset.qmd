@@ -1,6 +1,6 @@
 # Template: `city_pull_dataset()`
 
-```{text}
+```text
 #' Pull a CITY_NAME Open Data dataset
 #'
 #' Downloads a dataset from the CITY_NAME Open Data Socrata API using either a

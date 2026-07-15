@@ -1,6 +1,6 @@
 # Template: `utils_requests.R`
 
-```{text}
+```text
 # Internal helpers for CITY_NAME Open Data requests ####
 # - .city_endpoint(): constructs the Socrata endpoint URL from a dataset id
 # - .city_add_filters(): adds equality filters (and IN() for multi-values) as a Socrata $where clause

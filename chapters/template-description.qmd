@@ -1,6 +1,6 @@
 # Template: DESCRIPTION
 
-```{text}
+```text
 Package: cityOpenData
 Type: Package
 Title: A Lightweight Interface to CITY_NAME Open Data APIs

@@ -1,6 +1,6 @@
 # Template: `city_any_dataset()`
 
-```{text}
+```text
 #' Pull any CITY_NAME Open Data dataset from a Socrata JSON endpoint
 #'
 #' Downloads data from any CITY_NAME Open Data Socrata JSON endpoint and returns

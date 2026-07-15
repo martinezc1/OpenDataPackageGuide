@@ -15,12 +15,13 @@ E --> F[Return tibble]
 
 In most cases, users should prefer `city_pull_dataset()`, since it provides readable dataset keys and additional convenience features. However, `city_any_dataset()` is useful for newly published datasets, datasets omitted from the metadata catalog, or any valid Socrata JSON endpoint.
 
-::: callout-tip
+::: {.callout-tip}
 ## When should I use `city_any_dataset()`?
 
 Use `city_pull_dataset()` whenever the dataset is available in the package catalog.
 
 Use `city_any_dataset()` only when you already have a Socrata JSON endpoint or when the dataset is not available through `city_list_datasets()`.
+
 :::
 
 ## What Needs to Change
@@ -49,7 +50,7 @@ After making the necessary replacements, verify that:
 Below is a table on the template values that need to be replaced per the specific city, and what they need to be replaced with.
 
 | Template value | Replace with |
-|------------------------|------------------------------------------------|
+|-------------------------|-----------------------------------------------|
 | `CITY_NAME` | Full city name, such as `NYC`, `Chicago`, or `Los Angeles` |
 | `city_any_dataset()` | Package-specific public function name |
 | `city_list_datasets()` | Package-specific catalog-listing function |

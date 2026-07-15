@@ -44,7 +44,7 @@ Once the repository has been created, copy its URL.
 
 For example:
 
-```{text}
+```text
 https://github.com/USERNAME/nycOpenData.git
 ```
 
@@ -54,13 +54,13 @@ Open your package project in RStudio.
 
 If Git was not enabled when the project was created, initialize it from the Terminal:
 
-```{text}
+```text
 git init
 ```
 
 Then verify Git is active:
 
-```{text}
+```text
 git status
 ```
 
@@ -68,13 +68,13 @@ git status
 
 Add the GitHub repository as the remote origin.
 
-```{text}
+```text
 git remote add origin https://github.com/USERNAME/nycOpenData.git
 ```
 
 Verify the connection:
 
-```{text}
+```text
 git remote -v
 ```
 
@@ -84,13 +84,13 @@ You should now see the GitHub repository listed as the remote.
 
 Stage every file:
 
-```{text}
+```text
 git add .
 ```
 
 Commit them:
 
-```{text}
+```text
 git commit -m "Initial package template"
 ```
 
@@ -98,7 +98,7 @@ git commit -m "Initial package template"
 
 Push the package to GitHub
 
-```{text}
+```text
 git branch -M main
 git push -u origin main
 ```
@@ -111,7 +111,7 @@ After the initial setup, the Git workflow is very simple.
 
 Whenever you finish making changes:
 
-```{text}
+```text
 git add .
 git commit -m "Describe what changed"
 git push
@@ -125,7 +125,7 @@ At this point, your package structure is complete and connected to GitHub. The f
 
 If you already cloned a package from GitHub and someone else has made changes, download the latest updates before beginning your work.
 
-```{text}
+```text
 git pull
 ```
 
@@ -177,7 +177,7 @@ Copy these files into your package, replacing the placeholder files created by R
 
 After copying the template, run:
 
-```{text}
+```text
 devtools::document()
 ```
 
