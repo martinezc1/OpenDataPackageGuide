@@ -4,10 +4,16 @@
   "platform": "4.5.1",
   "metadata": {
     "appmode": "quarto-static",
-    "primary_rmd": "index.qmd",
+    "primary_rmd": "_quarto.yml",
     "primary_html": null,
     "content_category": null,
     "has_parameters": false
+  },
+  "environment": {
+    "environment_management": {
+      "r": true,
+      "python": false
+    }
   },
   "quarto": {
     "version": "1.9.38",
@@ -168,9 +174,6 @@
     "chapters/city_list_dataset.qmd": {
       "checksum": "7e76df30b4e47e29d8f1af7873e5f3df"
     },
-    "chapters/city_list_dataset.quarto_ipynb": {
-      "checksum": "26685c4600617bead248fa7c3bc3f422"
-    },
     "chapters/city_pull_dataset.qmd": {
       "checksum": "1695f0bbe04681b7deb1613e7dcef29b"
     },
@@ -180,53 +183,29 @@
     "chapters/getting-started.qmd": {
       "checksum": "075f13695ed6d6fdf12e35fed56825de"
     },
-    "chapters/getting-started.quarto_ipynb": {
-      "checksum": "24dea80a48f90d5733327ab8bf40156a"
-    },
     "chapters/packages.qmd": {
       "checksum": "a8572d111b6935a3d656e9489f4d6d7b"
     },
     "chapters/template-city-any-dataset.qmd": {
       "checksum": "1f1d4d0e5dda2ae3e78bfb1030f91b79"
     },
-    "chapters/template-city-any-dataset.quarto_ipynb": {
-      "checksum": "d3d34d990cdfd00af0ddc4356d26b61a"
-    },
     "chapters/template-city-list-dataset.qmd": {
       "checksum": "08215513663df09f7fd631d54c0e8e99"
-    },
-    "chapters/template-city-list-dataset.quarto_ipynb": {
-      "checksum": "6d10c5f707dede459dd2698f0ce39925"
     },
     "chapters/template-city-pull-dataset.qmd": {
       "checksum": "98c280e5f08f69617d67f2df807d5cd6"
     },
-    "chapters/template-city-pull-dataset.quarto_ipynb": {
-      "checksum": "1d86af1dbc56a3209034d3f7fc50faee"
-    },
     "chapters/template-description.qmd": {
       "checksum": "4cd01e0495387b794b571d766f08a895"
-    },
-    "chapters/template-description.quarto_ipynb": {
-      "checksum": "bfb3a5c6bcc0c18e1754ea053c87f872"
     },
     "chapters/template-readme.qmd": {
       "checksum": "b2a43a2848416e650289053b6921aede"
     },
-    "chapters/template-readme.quarto_ipynb": {
-      "checksum": "0545db9c4405865a0f57b82a059dbd74"
-    },
     "chapters/template-utils-requests.qmd": {
       "checksum": "b20a99b6f2b8b3556593bb3f70922681"
     },
-    "chapters/template-utils-requests.quarto_ipynb": {
-      "checksum": "0f42d9156c633d1dddf7509baf169f6c"
-    },
     "chapters/template-vignette.qmd": {
       "checksum": "91c083b0fa2ba319e9eba3951d57e734"
-    },
-    "chapters/template-vignette.quarto_ipynb": {
-      "checksum": "4678677084b784ce22272aef42050fc7"
     },
     "chapters/utils_request.qmd": {
       "checksum": "9d33520e682ba12af4887a679aa03409"
