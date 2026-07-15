@@ -1,0 +1,30 @@
+{
+    "id": "01E8C8D0",
+    "path": "~/Documents/Data_Coding/Package_Creating/making-OpenData-packages/chapters/getting-started.qmd",
+    "project_path": "chapters/getting-started.qmd",
+    "type": "quarto_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1784134234589.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "cursorPosition": "195,44",
+        "scrollLine": "176",
+        "rmdVisualCollapsedChunks": ""
+    },
+    "folds": "4|25|23|0|\n",
+    "lastKnownWriteTime": 1784134437,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1784134437434,
+    "read_only": false,
+    "read_only_alternatives": []
+}

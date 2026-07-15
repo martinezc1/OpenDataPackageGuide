@@ -1,0 +1,74 @@
+{
+  "index.qmd": {
+    "index.html": "00a82fa2"
+  },
+  "intro.qmd": {
+    "intro.html": "b7ab23bf"
+  },
+  "summary.qmd": {
+    "summary.html": "1f21a9e0"
+  },
+  "references.qmd": {
+    "references.html": "db0ca4cc"
+  },
+  "packages.qmd": {
+    "packages.html": "a544820b"
+  },
+  "city_list_dataset.qmd": {
+    "city_list_dataset.html": "3de42a02"
+  },
+  "city_pull_dataset.qmd": {
+    "city_pull_dataset.html": "6e2d781f"
+  },
+  "city_any_dataset.qmd": {
+    "city_any_dataset.html": "5778f8c2"
+  },
+  "utils_request.qmd": {
+    "utils_request.html": "6fe1e279"
+  },
+  "chapters/getting-started.qmd": {
+    "getting-started.html": "ca7adc8e"
+  },
+  "chapters/packages.qmd": {
+    "packages.html": "1008fb69"
+  },
+  "chapters/city_list_dataset.qmd": {
+    "city_list_dataset.html": "10530736"
+  },
+  "chapters/city_pull_dataset.qmd": {
+    "city_pull_dataset.html": "f5187546"
+  },
+  "chapters/city_any_dataset.qmd": {
+    "city_any_dataset.html": "d4a8da2b"
+  },
+  "chapters/utils_request.qmd": {
+    "utils_request.html": "ae774cb5"
+  },
+  "chapters/finalizing-your-package.qmd": {
+    "finalizing-your-package.html": "e64af900"
+  },
+  "chapters/template-city-list-dataset.qmd": {
+    "template-city-list-dataset.html": "221261bb"
+  },
+  "chapters/template-city-pull-dataset.qmd": {
+    "template-city-pull-dataset.html": "850e9720"
+  },
+  "chapters/template-city-any-dataset.qmd": {
+    "template-city-any-dataset.html": "d4741068"
+  },
+  "chapters/template-utils-requests.qmd": {
+    "template-utils-requests.html": "04124673"
+  },
+  "chapters/template-description.qmd": {
+    "template-description.html": "27be3a6f"
+  },
+  "chapters/template-readme.qmd": {
+    "template-readme.html": "eeab2123"
+  },
+  "chapters/template-vignette.qmd": {
+    "template-vignette.html": "39ee80ff"
+  },
+  "chapters/citation.qmd": {
+    "citation.html": "9c92133c"
+  }
+}

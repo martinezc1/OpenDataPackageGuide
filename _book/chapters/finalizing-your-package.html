@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Finalizing Your Package – The OpenData Package Developer's Guide</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/template-city-list-dataset.html" rel="next">
+<link href="../chapters/utils_request.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-367522ac618891c39d4b2ae87ea7600e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/finalizing-your-package.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Finalizing Your Package</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">The OpenData Package Developer’s Guide</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/getting-started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Getting Started</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Choosing a City</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/city_list_dataset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Working with <code>city_list_datasets()</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/city_pull_dataset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with <code>city_pull_dataset()</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/city_any_dataset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with <code>city_any_dataset()</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/utils_request.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Working With <code>utils_request.R</code></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/finalizing-your-package.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Finalizing Your Package</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/template-city-list-dataset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Template: <code>city_list_dataset()</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/template-city-pull-dataset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Template: <code>city_pull_dataset()</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/template-city-any-dataset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Template: <code>city_any_dataset()</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/template-utils-requests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Template: <code>utils_requests.R</code></span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#package-metadata" id="toc-package-metadata" class="nav-link active" data-scroll-target="#package-metadata"><span class="header-section-number">7.1</span> Package Metadata</a>
+  <ul class="collapse">
+  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description"><span class="header-section-number">7.1.1</span> Description</a></li>
+  <li><a href="#namespace" id="toc-namespace" class="nav-link" data-scroll-target="#namespace"><span class="header-section-number">7.1.2</span> Namespace</a></li>
+  </ul></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation"><span class="header-section-number">7.2</span> Documentation</a>
+  <ul class="collapse">
+  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license"><span class="header-section-number">7.2.1</span> License</a></li>
+  <li><a href="#news" id="toc-news" class="nav-link" data-scroll-target="#news"><span class="header-section-number">7.2.2</span> News</a></li>
+  <li><a href="#readme" id="toc-readme" class="nav-link" data-scroll-target="#readme"><span class="header-section-number">7.2.3</span> README</a></li>
+  <li><a href="#vignettes" id="toc-vignettes" class="nav-link" data-scroll-target="#vignettes"><span class="header-section-number">7.2.4</span> Vignettes</a></li>
+  <li><a href="#pkgdown-website" id="toc-pkgdown-website" class="nav-link" data-scroll-target="#pkgdown-website"><span class="header-section-number">7.2.5</span> pkgdown Website</a></li>
+  </ul></li>
+  <li><a href="#quick-file-reference" id="toc-quick-file-reference" class="nav-link" data-scroll-target="#quick-file-reference"><span class="header-section-number">7.3</span> Quick File Reference</a></li>
+  <li><a href="#common-pitfalls" id="toc-common-pitfalls" class="nav-link" data-scroll-target="#common-pitfalls"><span class="header-section-number">7.4</span> Common Pitfalls</a></li>
+  <li><a href="#before-submitting" id="toc-before-submitting" class="nav-link" data-scroll-target="#before-submitting"><span class="header-section-number">7.5</span> Before Submitting</a>
+  <ul class="collapse">
+  <li><a href="#testing" id="toc-testing" class="nav-link" data-scroll-target="#testing"><span class="header-section-number">7.5.1</span> Testing</a></li>
+  <li><a href="#before-publishing" id="toc-before-publishing" class="nav-link" data-scroll-target="#before-publishing"><span class="header-section-number">7.5.2</span> Before Publishing</a></li>
+  <li><a href="#final-workflow" id="toc-final-workflow" class="nav-link" data-scroll-target="#final-workflow"><span class="header-section-number">7.5.3</span> Final Workflow</a></li>
+  <li><a href="#submitting-to-cran" id="toc-submitting-to-cran" class="nav-link" data-scroll-target="#submitting-to-cran"><span class="header-section-number">7.5.4</span> Submitting to CRAN</a></li>
+  </ul></li>
+  <li><a href="#congratulations" id="toc-congratulations" class="nav-link" data-scroll-target="#congratulations"><span class="header-section-number">7.6</span> Congratulations</a></li>
+  <li><a href="#thank-you" id="toc-thank-you" class="nav-link" data-scroll-target="#thank-you"><span class="header-section-number">7.7</span> Thank You!</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Finalizing Your Package</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>At this point, the package’s core functionality is complete. However, a high-quality R package consists of much more than its R scripts. This chapter walks through the remaining files that should be reviewed before submitting the package to CRAN or sharing it with others.</p>
+<section id="package-metadata" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="package-metadata"><span class="header-section-number">7.1</span> Package Metadata</h2>
+<p>There are several documents that make up the metadata regarding the package itself. These include the following.</p>
+<section id="description" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="description"><span class="header-section-number">7.1.1</span> Description</h3>
+<p>The&nbsp;<code>DESCRIPTION</code>&nbsp;file serves as the package’s identity card. It contains metadata used by CRAN, GitHub, and other R tooling to describe the package and its dependencies.</p>
+<section id="commonly-updated-fields" class="level4" data-number="7.1.1.1">
+<h4 data-number="7.1.1.1" class="anchored" data-anchor-id="commonly-updated-fields"><span class="header-section-number">7.1.1.1</span> Commonly Updated Fields</h4>
+<ul>
+<li><p><strong>Package</strong>&nbsp;– The name of your package.</p></li>
+<li><p><strong>Title</strong>&nbsp;– A short, descriptive title explaining the purpose of the package.</p></li>
+<li><p><strong>Version</strong>&nbsp;– The current version number of the package, updated with each release.</p></li>
+<li><p><strong>Authors</strong>&nbsp;– The names and roles of the package authors and contributors.</p></li>
+<li><p><strong>Description</strong>&nbsp;– A more detailed explanation of what the package does and who it is for.</p></li>
+<li><p><strong>URL</strong>&nbsp;– Links to the package website, GitHub repository, or other relevant resources.</p></li>
+<li><p><strong>BugReports</strong>&nbsp;– The URL where users can report issues or bugs.</p></li>
+<li><p><strong>Imports</strong>&nbsp;– Packages that your package depends on to function correctly.</p></li>
+<li><p><strong>Suggests</strong>&nbsp;– Packages used for optional features such as testing, examples, or vignettes.</p></li>
+</ul>
+</section>
+<section id="fields-that-are-usually-left-unchanged" class="level4" data-number="7.1.1.2">
+<h4 data-number="7.1.1.2" class="anchored" data-anchor-id="fields-that-are-usually-left-unchanged"><span class="header-section-number">7.1.1.2</span> Fields That Are Usually Left Unchanged</h4>
+<ul>
+<li><p><strong>Type</strong>&nbsp;– Specifies the package type, which will almost always be&nbsp;<code>"Package"</code>.</p></li>
+<li><p><strong>Encoding</strong>&nbsp;– Defines the text encoding used by the package, typically&nbsp;<code>"UTF-8"</code>.</p></li>
+<li><p><strong>RoxygenNote</strong>&nbsp;– Records the version of&nbsp;<strong>roxygen2</strong>&nbsp;used to generate the documentation.</p></li>
+<li><p><strong>Depends</strong>&nbsp;– Lists packages that users must attach when loading your package, though&nbsp;<code>Imports</code>&nbsp;is generally preferred.</p></li>
+<li><p><strong>VignetteBuilder</strong>&nbsp;– Specifies the package used to build the package vignettes.</p></li>
+<li><p><strong>Config/testthat/edition</strong>&nbsp;– Indicates the version of&nbsp;<strong>testthat</strong>&nbsp;used for the package’s testing framework.</p></li>
+</ul>
+</section>
+</section>
+<section id="namespace" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="namespace"><span class="header-section-number">7.1.2</span> Namespace</h3>
+<p>This is a file that is usually generated automatically by roxygen2 (when you run <code>devtools::document()</code>). You should almost <em>never</em> edit this file manually.</p>
+</section>
+</section>
+<section id="documentation" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="documentation"><span class="header-section-number">7.2</span> Documentation</h2>
+<section id="license" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="license"><span class="header-section-number">7.2.1</span> License</h3>
+<p>This is telling the community how they can work with this package. Unless you are changing the package’s licensing model, this file is typically created once and rarely modified.</p>
+</section>
+<section id="news" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="news"><span class="header-section-number">7.2.2</span> News</h3>
+<p>This is a place to put any news regarding any changes/updates that have been made to the package. This should most likely be updated with every version update. For example, if you update the package from 0.1.0 to 0.1.1, then the changes should be described in News.</p>
+</section>
+<section id="readme" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="readme"><span class="header-section-number">7.2.3</span> README</h3>
+<p>The README is often the first thing users see when visiting the package’s GitHub repository. A good README should explain what the package does, how to install it, and include several working examples.</p>
+<p>For a package, there will be two README files:</p>
+<ol type="1">
+<li>README.Rmd</li>
+<li>README.md</li>
+</ol>
+<p>The .Rmd file is a traditional R Markdown file, while the .md file is the rendered version of the .Rmd file. Typically, you would edit the .Rmd file, render the output, and the .md file would automatically update.</p>
+<p>Although not required by CRAN, a README is strongly recommended because it serves as the primary landing page for users visiting the package on GitHub.</p>
+<p>Additionally, this will become critical if creating a webpage, such as pkgdown, for the package.</p>
+</section>
+<section id="vignettes" class="level3" data-number="7.2.4">
+<h3 data-number="7.2.4" class="anchored" data-anchor-id="vignettes"><span class="header-section-number">7.2.4</span> Vignettes</h3>
+<p>Vignettes are long-form tutorials that demonstrate how to use your package in realistic workflows. Unlike individual function documentation, which explains a single function, vignettes show how multiple functions work together to solve a problem.</p>
+<p>For an OpenData package, a vignette is an excellent place to demonstrate a complete workflow, such as:</p>
+<ul>
+<li><p>Listing available datasets with&nbsp;<code>city_list_datasets()</code></p></li>
+<li><p>Downloading a dataset using&nbsp;<code>city_pull_dataset()</code></p></li>
+<li><p>Filtering observations</p></li>
+<li><p>Working with date ranges</p></li>
+<li><p>Performing a simple analysis or visualization</p></li>
+</ul>
+<p>Well-written vignettes help new users become productive more quickly and provide examples that are often more comprehensive than those included in individual function documentation.</p>
+<p>By default, vignettes are stored in the package’s&nbsp;<code>vignettes/</code>&nbsp;directory and are automatically included in the pkgdown website.</p>
+<p><strong>It is strongly encouraged all OpenData packages have <em>at least</em> one vignette.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Keep vignettes reproducible
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Because vignettes are intended to be run by users, avoid examples that depend on temporary datasets, hard-coded file paths, or values that frequently change. Whenever possible, use stable datasets and limit the number of rows downloaded so the vignette runs quickly while still demonstrating the package’s functionality.</p>
+</div>
+</div>
+</section>
+<section id="pkgdown-website" class="level3" data-number="7.2.5">
+<h3 data-number="7.2.5" class="anchored" data-anchor-id="pkgdown-website"><span class="header-section-number">7.2.5</span> pkgdown Website</h3>
+<p>One of the easiest ways to make an R package look professional is by creating a&nbsp;<strong>pkgdown</strong>&nbsp;website. A pkgdown website automatically converts your package documentation into a searchable website, making it easier for users to browse functions, read vignettes, and learn how to use your package.</p>
+<p>When hosted through&nbsp;<strong>GitHub Pages</strong>, the website serves as the public-facing homepage for your package. Rather than navigating individual help files, users can access reference documentation, installation instructions, articles, and examples from a single location.</p>
+<p>A typical pkgdown website includes:</p>
+<ul>
+<li><p>A homepage generated from the package&nbsp;<code>README.md</code></p></li>
+<li><p>Reference pages for every exported function</p></li>
+<li><p>Vignettes and tutorials</p></li>
+<li><p>News and release notes from&nbsp;<code>NEWS.md</code></p></li>
+<li><p>Links to the package source code, issue tracker, and documentation</p></li>
+</ul>
+<p>For many users, the pkgdown website will be their first interaction with your package. Spending time to create a clear homepage and well-written function documentation can greatly improve the usability of the package.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Rebuild your website after making changes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Whenever you update your package documentation, README, or vignettes, remember to rebuild the pkgdown website so the online documentation stays synchronized with the package. If you are using pkgdown, this can typically be done with:</p>
+<ul>
+<li><code>pkgdown::build_site()</code></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="quick-file-reference" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="quick-file-reference"><span class="header-section-number">7.3</span> Quick File Reference</h2>
+<p>Below is a table with information regarding the individual files:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 26%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Usually Edited?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>DESCRIPTION</td>
+<td>✅ Yes</td>
+<td>Update metadata</td>
+</tr>
+<tr class="even">
+<td>NAMESPACE</td>
+<td>❌ No</td>
+<td>Generated automatically</td>
+</tr>
+<tr class="odd">
+<td>README.Rmd</td>
+<td>✅ Yes</td>
+<td>Main documentation</td>
+</tr>
+<tr class="even">
+<td>README.md</td>
+<td>⚙️ Auto-generated</td>
+<td>Don’t edit directly</td>
+</tr>
+<tr class="odd">
+<td>NEWS.md</td>
+<td>✅ Yes</td>
+<td>Version history</td>
+</tr>
+<tr class="even">
+<td>LICENSE</td>
+<td>⚠️ Once</td>
+<td>Usually doesn’t change</td>
+</tr>
+<tr class="odd">
+<td>cran-comments.md</td>
+<td>📝 Only for CRAN</td>
+<td>Submission notes</td>
+</tr>
+<tr class="even">
+<td>CRAN-SUBMISSION</td>
+<td>🤖 Auto-generated</td>
+<td>Ignore during development</td>
+</tr>
+<tr class="odd">
+<td><strong>vignettes/</strong></td>
+<td>✅ Yes</td>
+<td>Long-form tutorials and workflows</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="common-pitfalls" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="common-pitfalls"><span class="header-section-number">7.4</span> Common Pitfalls</h2>
+<p>Making a package is a lot of work. Here are some of the things to look out for:</p>
+<ul>
+<li><p>Editing README.md instead of README.Rmd</p></li>
+<li><p>Editing NAMESPACE manually</p></li>
+<li><p>Forgetting to run document()</p></li>
+<li><p>Forgetting to bump the version</p></li>
+<li><p>Forgetting to update NEWS.md</p></li>
+<li><p>Using stale URLs</p></li>
+<li><p>Forgetting to rebuild pkgdown</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Don’t try to perfect everything at once
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Most package development is iterative.</p>
+<p>Get the package working first, then improve the documentation, website, examples, and testing over time.</p>
+</div>
+</div>
+</section>
+<section id="before-submitting" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="before-submitting"><span class="header-section-number">7.5</span> Before Submitting</h2>
+<p>The final steps before making the package public, whether to GitHub or CRAN, are as follows.</p>
+<section id="testing" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="testing"><span class="header-section-number">7.5.1</span> Testing</h3>
+<p>Before publishing your package, run the following commands in order:</p>
+<ol type="1">
+<li><code>devtools::document()</code>: Regenerates documentation and updates NAMESPACE.</li>
+<li><code>devtools::test()</code>: Runs the package’s automated tests.</li>
+<li><code>devtools::check()</code>: Simulates CRAN checks to identify problems before submission.</li>
+</ol>
+</section>
+<section id="before-publishing" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="before-publishing"><span class="header-section-number">7.5.2</span> Before Publishing</h3>
+<p>In the cases when you are re-publishing your package after having made some updates, here are things to look out for:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">DESCRIPTION updated</label></li>
+<li><label><input type="checkbox">README rebuilt</label></li>
+<li><label><input type="checkbox">Documentation rebuilt</label></li>
+<li><label><input type="checkbox">NEWS updated</label></li>
+<li><label><input type="checkbox">Website rebuilt</label></li>
+<li><label><input type="checkbox">Tests pass</label></li>
+<li><label><input type="checkbox"><code>devtools::check()</code> passes</label></li>
+<li><label><input type="checkbox">No NOTES</label></li>
+<li><label><input type="checkbox">Version number updated</label></li>
+<li><label><input type="checkbox">Package website deployed (if using pkgdown)</label></li>
+<li><label><input type="checkbox">GitHub repository updated</label></li>
+<li><label><input type="checkbox">CRAN comments prepared (if submitting to CRAN)</label></li>
+<li><label><input type="checkbox">Vignettes rebuilt and tested.</label></li>
+</ul>
+</section>
+<section id="final-workflow" class="level3" data-number="7.5.3">
+<h3 data-number="7.5.3" class="anchored" data-anchor-id="final-workflow"><span class="header-section-number">7.5.3</span> Final Workflow</h3>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+A[Customize Template]
+--&gt; B[Test Package]
+--&gt; C[Update Documentation]
+--&gt; D[Build Website]
+--&gt; E[Run devtools::check()]
+--&gt; F[Publish]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="submitting-to-cran" class="level3" data-number="7.5.4">
+<h3 data-number="7.5.4" class="anchored" data-anchor-id="submitting-to-cran"><span class="header-section-number">7.5.4</span> Submitting to CRAN</h3>
+<p>When everything is all said and done, and you are ready to submit to cran, you can use the following command:</p>
+<ul>
+<li><code>devtools::release()</code></li>
+</ul>
+<p><code>devtools::release()</code> guides you through a series of checks before preparing the package for submission. Once the checks pass, you’ll be prompted to answer a few questions and then directed to submit the package to CRAN. After submission, you’ll receive a confirmation email from CRAN, and a reviewer will either accept the package or contact you with any requested changes.</p>
+</section>
+</section>
+<section id="congratulations" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="congratulations"><span class="header-section-number">7.6</span> Congratulations</h2>
+<p>Congratulations! At this point, you have customized the package template, updated the documentation, tested the package, and prepared it for publication.</p>
+<p>Whether you choose to share your package through GitHub, submit it to CRAN, or contribute it to a larger ecosystem such as&nbsp;<strong>rOpenSci</strong>, you now have a reproducible framework for creating Open Data packages that can be maintained and expanded over time.</p>
+<p>The remaining chapters provide additional reference material and resources that may be helpful as you continue developing your package.</p>
+</section>
+<section id="thank-you" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="thank-you"><span class="header-section-number">7.7</span> Thank You!</h2>
+<p>Thank you for contributing to the OpenData ecosystem. Every new package makes public data more accessible to researchers, students, educators, journalists, and the communities these datasets represent.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/utils_request.html" class="pagination-link" aria-label="Working With `utils_request.R`">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Working With <code>utils_request.R</code></span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/template-city-list-dataset.html" class="pagination-link" aria-label="Template: `city_list_dataset()`">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Template: <code>city_list_dataset()</code></span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
