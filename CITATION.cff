@@ -1,10 +1,6 @@
 cff-version: 1.1.0
-
 message: "If you use this guide, please cite it as follows."
-
 title: "The OpenData Package Developer's Guide"
-
-type: book
 
 authors:
   - family-names: Martinez
@@ -12,13 +8,7 @@ authors:
     orcid: "https://orcid.org/0009-0005-6026-6454"
 
 version: "1.0.0"
-
 date-released: 2026-07-15
-
-doi: 10.5281/zenodo.21383609
-
+doi: "10.5281/zenodo.21383609"
 url: "https://martinezc1-the-opendata-package-developers-guide.share.connect.posit.cloud/"
-
-repository-code: "https://github.com/martinezc1/OpenDataPackageGuide"
-
 license: "CC-BY-4.0"
