@@ -1,14 +1,9 @@
 cff-version: 1.1.0
-preferred-citation:
-message: "If you use this repository, please cite the book below."
-type: book
-title: "OpenData Package Developer's Guide"
+message: "If you use this software, please cite it as below."
 authors:
-  - family-names: "Martinez"
-    given-names: "Christian"
-    orcid: "https://orcid.org/0009-0005-6026-6454"
-year: 2026
+- family-names: Martinez
+  given-names: Christian
+orcid: https://orcid.org/0009-0005-6026-6454
+title:martinezc1/OpenDataPackageGuide: OpenData Package Developer's Guide 1.0.0
+version: v1.0.0
 date-released: 2026-07-15
-doi: "10.5281/zenodo.21383609"
-url: "https://martinezc1-the-opendata-package-developers-guide.share.connect.posit.cloud/"
-
