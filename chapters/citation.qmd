@@ -32,7 +32,9 @@ or
 
 ## Citation
 
-If this guide contributed substantially to your package or research, please cite it.
+If this guide contributed substantially to your package or research, please cite:
+
+@Martinez2026OpenDataGuide
 
 ------------------------------------------------------------------------
 
