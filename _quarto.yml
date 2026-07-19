@@ -9,10 +9,10 @@ book:
     - index.qmd
     - chapters/getting-started.qmd
     - chapters/packages.qmd
-    - chapters/city_list_dataset.qmd
+    - chapters/utils_request.qmd
+    - chapters/city_list_datasets.qmd
     - chapters/city_pull_dataset.qmd
     - chapters/city_any_dataset.qmd
-    - chapters/utils_request.qmd
     - chapters/finalizing-your-package.qmd
     - chapters/citation.qmd
   appendices:

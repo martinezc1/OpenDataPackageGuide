@@ -86,7 +86,7 @@ After making the necessary replacements, verify that:
 Below is a table on the template values that need to be replaced per the specific city, and what they need to be replaced with.
 
 | Template value | Replace with |
-|------------------------------|------------------------------------------|
+|----|----|
 | `CITY_NAME` | Full city name |
 | `city_pull_dataset()` | Package-specific function prefix |
 | `city_list_datasets()` | Package-specific function prefix |

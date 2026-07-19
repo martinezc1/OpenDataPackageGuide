@@ -17,19 +17,18 @@ Although the overall workflow remains the same for every package, each city's me
 3.  `name`: Verify which column contains the human-readable dataset name. Most portals use either `name` or `title`, although this varies slightly between cities.
 4.  `UID`: The UID is the four-character-by-four-character Socrata identifier (for example `erm2-nwe9`) used when downloading datasets. Some metadata catalogs call this column `uid`, while others use `id.`
 
-::: {.callout-tip}
+::: callout-tip
 ## Why make a key?
 
 Although every Socrata dataset has a permanent UID, those identifiers are difficult to remember. For example, `erm2-nwe9` is much less descriptive than `parking_violations_issued`. The package therefore generates a human-readable key using `janitor::make_clean_names()`. Users can reference datasets using either the generated key or the official UID.
-
 :::
 
 ## Verifying Your Results
 
 After making the necessary replacements, run the following:
 
-```text
-city_list_dataset()
+``` text
+city_list_datasets()
 ```
 
 Confirm that:
@@ -53,7 +52,7 @@ This catches most metadata issues before moving on to the remainder of the packa
 Below is a table on the template values that need to be replaced per the specific city, and what they need to be replaced with.
 
 | Template value | Replace with |
-|--------------------|----------------------------------------------------|
+|---------------------|---------------------------------------------------|
 | `CITY_NAME` | Full city name |
 | `city` | Package/function prefix |
 | `CATALOG_DATASET_ID` | Socrata UID of the metadata catalog |

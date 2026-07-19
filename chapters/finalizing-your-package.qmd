@@ -73,13 +73,10 @@ Although not required by CRAN, a README is strongly recommended because it serve
 
 Additionally, this will become critical if creating a webpage, such as pkgdown, for the package.
 
-
-::: {.callout-tip}
-
+::: callout-tip
 #### New to R Markdown or Quarto?
 
 This guide assumes a basic familiarity with R Markdown and Quarto. Readers looking for a more comprehensive introduction to reproducible workflows, literate programming, and document publishing may find *Reproducible Research Using R* a helpful companion resource @Martinez2026ReproducibleResearch.
-
 :::
 
 ### Vignettes
